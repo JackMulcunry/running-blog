@@ -3,10 +3,10 @@ import react from "@vitejs/plugin-react";
 import { tempo } from "tempo-devtools/dist/vite";
 
 export default defineConfig({
+  base: "/running-blog/", // ✅ Required for GitHub Pages under a subdirectory
   plugins: [react(), tempo()],
-  base: "/running-blog/", // ✅ <-- Add this line
   server: {
-    // @ts-ignore
+    // Optional: Allows Tempo devtools when running locally
     allowedHosts: process.env.TEMPO === "true" ? true : undefined,
   },
 });
