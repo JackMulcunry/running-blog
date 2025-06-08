@@ -2,10 +2,12 @@
   "name": "running-blog",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://jackmulcunry.github.io/running-blog",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
