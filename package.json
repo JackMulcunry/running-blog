@@ -5,10 +5,10 @@
   "homepage": "https://jackmulcunry.github.io/running-blog",
   "scripts": {
   "dev": "vite",
-  "build": "vite build",
+  "build": "cross-env VITE_TEMPO=true vite build",
+  "deploy": "gh-pages -d dist"
   "preview": "vite preview",
   "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist -b gh-pages"
 },
   "dependencies": {
     "react": "^18.0.0",
