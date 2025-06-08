@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://jackmulcunry.github.io/running-blog",
   "scripts": {
-  "dev": "vite",
+  "dev": "cross-env VITE_TEMPO=true vite",
   "build": "cross-env VITE_TEMPO=false vite build",
   "deploy": "gh-pages -d dist"
   "preview": "vite preview",
