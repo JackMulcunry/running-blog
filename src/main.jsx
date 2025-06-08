@@ -1,12 +1,13 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom/client"; // ✅ For React 18
+// import ReactDOM from "react-dom";      // ✅ Uncomment for React 17
 import { BrowserRouter, Routes, Route, useRoutes } from "react-router-dom";
 import { tempoDevtools } from "tempo-devtools";
 import routes from "tempo-routes";
 import App from "./App.jsx";
 import "./App.css";
 
-// Initialize Tempo Devtools
+// Init devtools (safe in prod too)
 tempoDevtools.init();
 
 function AppWithRouting() {
@@ -18,14 +19,9 @@ function AppWithRouting() {
 }
 
 function AppContent() {
-  // If VITE_TEMPO is set (dev mode), use Tempo routes
   const tempoRoutes = import.meta.env.VITE_TEMPO ? useRoutes(routes) : null;
+  if (tempoRoutes) return tempoRoutes;
 
-  if (tempoRoutes) {
-    return tempoRoutes;
-  }
-
-  // ✅ Always show App component in production
   return (
     <Routes>
       <Route path="/" element={<App />} />
@@ -34,8 +30,9 @@ function AppContent() {
   );
 }
 
-// Mount app to DOM
-ReactDOM.createRoot(document.getElementById("root")).render(
+// ✅ Mount with React 18
+const rootEl = document.getElementById("root");
+ReactDOM.createRoot(rootEl).render(
   <React.StrictMode>
     <AppWithRouting />
   </React.StrictMode>
