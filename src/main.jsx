@@ -33,6 +33,6 @@ function AppContent() {
 // ✅ Mount with React 18
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <AppWithRouting />
   </React.StrictMode>
 );
