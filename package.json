@@ -5,7 +5,7 @@
   "homepage": "https://jackmulcunry.github.io/running-blog",
   "scripts": {
   "dev": "vite",
-  "build": "cross-env VITE_TEMPO=true vite build",
+  "build": "cross-env VITE_TEMPO=false vite build",
   "deploy": "gh-pages -d dist"
   "preview": "vite preview",
   "predeploy": "npm run build",
