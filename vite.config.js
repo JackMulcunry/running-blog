@@ -1,8 +1,8 @@
-// vite.config.js
-export default defineConfig(({ command }) => ({
-  base: command === "serve" ? "/" : "/running-blog/",
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import { tempo } from "tempo-devtools/dist/vite";
+
+export default defineConfig(({ mode }) => ({
+  base: mode === "production" ? "/running-blog/" : "/", // ✅ correct base per env
   plugins: [react(), tempo()],
-  define: {
-    'import.meta.env.VITE_TEMPO': JSON.stringify(true),
-  },
 }));
