@@ -19,15 +19,18 @@ function AppWithRouting() {
 }
 
 function AppContent() {
-  const tempoRoutes =
-    import.meta.env.VITE_TEMPO === "true" ? useRoutes(routes) : null;
-
-  if (tempoRoutes) return tempoRoutes;
+  const tempoRoutes = import.meta.env.VITE_TEMPO === 'true' ? useRoutes(routes) : null;
 
   return (
     <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="*" element={<App />} />
+      {tempoRoutes ? (
+        <Route path="*" element={tempoRoutes} />
+      ) : (
+        <>
+          <Route path="/" element={<App />} />
+          <Route path="*" element={<App />} />
+        </>
+      )}
     </Routes>
   );
 }
