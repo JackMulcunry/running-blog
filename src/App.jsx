@@ -3,6 +3,7 @@ import "./App.css";
 
 function App() {
   return (
+    console.log("App is rendering!")
     <div className="app">
       <header className="header">
         <h1 className="title">My Running Log</h1>
