@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client"; // ✅ For React 18
 import { BrowserRouter, Routes, Route, useRoutes } from "react-router-dom";
 import { tempoDevtools } from "tempo-devtools";
 import routes from "tempo-routes";
-import App from "./App";
+import App from "./App.jsx";
 import "./App.css";
 
 // Init devtools (safe in prod too)
@@ -31,8 +31,8 @@ function AppContent() {
 }
 
 // ✅ Mount with React 18
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AppWithRouting />
+    <App />
   </React.StrictMode>
-);
+)
