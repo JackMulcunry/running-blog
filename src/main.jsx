@@ -19,7 +19,9 @@ function AppWithRouting() {
 }
 
 function AppContent() {
-  const tempoRoutes = import.meta.env.VITE_TEMPO ? useRoutes(routes) : null;
+  const tempoRoutes =
+    import.meta.env.VITE_TEMPO === "true" ? useRoutes(routes) : null;
+
   if (tempoRoutes) return tempoRoutes;
 
   return (
