@@ -31,8 +31,7 @@ function AppContent() {
 }
 
 // ✅ Mount with React 18
-const rootEl = document.getElementById("root");
-ReactDOM.createRoot(rootEl).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AppWithRouting />
   </React.StrictMode>
